@@ -1,0 +1,109 @@
+first  upload methode code
+----------------------------------------------------------------------------------------------------------------------
+function doGet(e) { 
+  Logger.log( JSON.stringify(e) );
+  var result = 'Ok';
+  if (e.parameter == 'undefined') {
+    result = 'No Parameters';
+  }
+  else {
+   var sheet_id = '1YhLwn7YNNaxwhQyNG0BhlUmXxBGpoOx2AgHRlaa3eU8'; 	// Spreadsheet ID
+   var sheet = SpreadsheetApp.openById(sheet_id).getActiveSheet();
+   var newRow = sheet.getLastRow() + 1;						
+   var rowData = [];
+   var Curr_Date = new Date();
+   rowData[0] = Curr_Date; 
+   for (var param in e.parameter) {
+      Logger.log('In for loop, param=' + param);
+      var value = stripQuotes(e.parameter[param]);
+      Logger.log(param + ':' + e.parameter[param]);
+      switch (param) {
+        case 'data1':
+          rowData[1] = value;
+          result = 'data1'; 
+          break;
+        case 'data2':
+          rowData[2] = value;
+          result = 'data2'; 
+          break;
+        case 'data3':
+          rowData[3] = value;
+          result = 'data3'; 
+          break;
+        case 'data4':
+          rowData[4] = value;
+          result = 'data4'; 
+          break;
+        case 'data5':
+          rowData[5] = value;
+          result = 'data5'; 
+          break;
+        case 'data6':
+          rowData[6] = value;
+          result = 'data6'; 
+          break;
+        case 'data7':
+          rowData[7] = value;
+          result = 'data7'; 
+          break;
+        case 'data8':
+          rowData[8] = value;
+          result = 'data8'; 
+          break;
+        case 'data9':
+          rowData[9] = value;
+          result = 'data9';
+          break;
+        case 'data10':
+          rowData[10] = value;
+          result = 'data10'; 
+          break;
+        default:
+          result = "unsupported parameter";
+      }
+    }
+  Logger.log(JSON.stringify(rowData));
+    var newRange = sheet.getRange(newRow, 1, 1, rowData.length);
+    newRange.setValues([rowData]);
+  }
+  return ContentService.createTextOutput(result);
+}
+function stripQuotes( value ) {
+  return value.replace(/^["']|['"]$/g, "");
+}
+---------------------------------------------------------------------------------------------------------------------
+second upload methode code
+--------------------------------------------------------------------------------------------------------------------
+var ss = SpreadsheetApp.openById('13qQnJah8W7zIXg6uzt6Hg9GBnsWSxwoJeBT4aUhlh9Y');
+var sheet = ss.getSheetByName('Sheet1');
+function doGet(e){
+  if (e.parameter == 'undefined') {
+    return ContentService.createTextOutput("Received data is undefined");
+  }
+  var date = new Date();
+  data1   = e.parameters.data1;
+  data2   = e.parameters.data2;
+  data3   = e.parameters.data3;
+  data4   = e.parameters.data4;
+  data5   = e.parameters.data5;
+  data6   = e.parameters.data6;
+  data7   = e.parameters.data7;
+  data8   = e.parameters.data8;
+  data9   = e.parameters.data9;
+  data10  = e.parameters.data10;
+
+  var nextRow = sheet.getLastRow() + 1;
+  sheet.getRange("A" + nextRow).setValue(date);
+  sheet.getRange("B" + nextRow).setValue(data1);
+  sheet.getRange("C" + nextRow).setValue(data2);
+  sheet.getRange("D" + nextRow).setValue(data3);
+  sheet.getRange("E" + nextRow).setValue(data4);
+  sheet.getRange("F" + nextRow).setValue(data5);
+  sheet.getRange("G" + nextRow).setValue(data6);
+  sheet.getRange("H" + nextRow).setValue(data7);
+  sheet.getRange("I" + nextRow).setValue(data8);
+  sheet.getRange("J" + nextRow).setValue(data9);
+  sheet.getRange("K" + nextRow).setValue(data10);
+  return ContentService.createTextOutput("Status Updated in Google Sheet");
+}
+--------------------------------------------------------------------------------------------------------------------------

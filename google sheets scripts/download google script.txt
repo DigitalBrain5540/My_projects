@@ -1,0 +1,48 @@
+first methode
+-----------------------------------------------------------------------------------------------------------
+var ss = SpreadsheetApp.openById('13qQnJah8W7zIXg6uzt6Hg9GBnsWSxwoJeBT4aUhlh9Y');
+var sheet = ss.getSheetByName('Sheet1');
+var data1   = sheet.getRange("B1").getValue();
+var data2   = sheet.getRange("B2").getValue();
+var data3   = sheet.getRange("B3").getValue();
+var data4   = sheet.getRange("B4").getValue();
+var data5   = sheet.getRange("B5").getValue();
+var data6   = sheet.getRange("B6").getValue();
+var data7   = sheet.getRange("B7").getValue();
+var data8   = sheet.getRange("B8").getValue();
+var data9   = sheet.getRange("B9").getValue();
+var data10  = sheet.getRange("B10").getValue();
+
+function doGet(e){
+  var read1 = e.parameter.read1;
+  var read2 = e.parameter.read2;
+  var read3 = e.parameter.read3;
+
+  if (read1 !== undefined){
+    return ContentService.createTextOutput(data1);
+  }
+  else if (read2 !== undefined){
+    return ContentService.createTextOutput(data2);
+  }
+  else if (read3 !== undefined){
+    return ContentService.createTextOutput(data3);
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------
+second methode
+--------------------------------------------------------------------------------------------------------------------
+var ss = SpreadsheetApp.openById('13qQnJah8W7zIXg6uzt6Hg9GBnsWSxwoJeBT4aUhlh9Y');
+var sheet = ss.getSheetByName('Sheet1');
+
+function doGet(e){
+  var read = e.parameter.read;
+
+  if (read !== undefined){
+    return ContentService.createTextOutput(sheet.getRange(read).getValue()); // output give ?read=cell location in url part
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------
+
+CONTROL PANEL FILE URL =  https://script.google.com/macros/s/AKfycbxm27Ih2gzXjjOB9JBvy5sTvV1O5_MTV4ADgRMBY28-UYSx9MiFppGiXFGbCl2-JJyVnw/exec

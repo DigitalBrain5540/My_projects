@@ -1,0 +1,11 @@
+SEWAC NO. 001
+URL https://script.google.com/macros/s/AKfycbxdVwH84PqiQgE9zVsnL8B1bh_x5xHhdQVhZCtD3hB6ozdv03-E6BY8Yn1yr2u8avfX/exec
+
+SEWAC NO. 002
+URL https://script.google.com/macros/s/AKfycbzhPifrRrWZVIPRUtzd5dBMzdmoyb43OQkLWdC9JhMRqFdiJoEKOXwdfa2sroYp6zWCgg/exec
+
+SEWAC NO. 003
+URL https://script.google.com/macros/s/AKfycbxslXRYMkQy3-8Vz_SQSKj7DffZ3jSACpd1YFt1kVmW9xkIoWnqAQ697zagl-pOv7npyg/exec
+
+SEWAC NO. 004
+URL https://script.google.com/macros/s/AKfycbykTCje4mY50Vmu_crG_LFeeKoSdu97XFzDvQDSMS4sXP6XWhkzRL2YEpwh6BU6VAUcpQ/exec
